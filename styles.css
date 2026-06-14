@@ -153,6 +153,12 @@ button:disabled {
   color: var(--text);
 }
 
+.nav-links a.is-active {
+  border-color: rgba(59, 130, 246, 0.28);
+  background: rgba(21, 28, 38, 0.98);
+  color: var(--text);
+}
+
 .section {
   padding: 58px 0;
 }
@@ -163,6 +169,10 @@ button:disabled {
   gap: 34px;
   align-items: center;
   padding-top: 60px;
+}
+
+.home-hero {
+  min-height: calc(100vh - 140px);
 }
 
 .hero-copy {
@@ -725,6 +735,25 @@ textarea {
   margin-bottom: 26px;
 }
 
+.compact-heading {
+  width: min(690px, 100%);
+}
+
+.page-hero {
+  padding-top: 82px;
+  padding-bottom: 30px;
+}
+
+.page-title {
+  max-width: 12ch;
+  margin-top: 2px;
+  font-size: clamp(3rem, 6vw, 4.3rem);
+}
+
+.page-hero-cta {
+  margin-top: 22px;
+}
+
 .section-heading p {
   margin-top: 14px;
   font-size: 1.05rem;
@@ -732,6 +761,29 @@ textarea {
 
 .cards-grid.four-up {
   grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.preview-section {
+  padding-top: 30px;
+}
+
+.split-overview {
+  display: grid;
+  grid-template-columns: minmax(0, 0.92fr) minmax(0, 1.08fr);
+  gap: 22px;
+  align-items: start;
+}
+
+.split-overview-tall {
+  align-items: center;
+}
+
+.preview-card-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.status-grid-compact {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
 .section-elevated {
@@ -754,6 +806,44 @@ textarea {
   margin: 18px 0 16px;
   color: var(--text);
   font-size: clamp(1.1rem, 2vw, 1.35rem);
+}
+
+.roadmap-status {
+  display: grid;
+  gap: 22px;
+}
+
+.roadmap-status-card,
+.roadmap-card {
+  position: relative;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-xl);
+  background: linear-gradient(180deg, rgba(17, 24, 33, 0.96), rgba(11, 17, 24, 0.98));
+  box-shadow: var(--shadow-card);
+}
+
+.roadmap-status-card {
+  padding: 28px;
+}
+
+.roadmap-columns {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.roadmap-card {
+  padding: 22px;
+}
+
+.roadmap-list {
+  margin: 18px 0 0;
+  padding-left: 18px;
+  color: var(--text-2);
+}
+
+.roadmap-list li + li {
+  margin-top: 10px;
 }
 
 .cta-panel,
@@ -855,6 +945,13 @@ textarea:focus {
   padding: 0 0 48px;
 }
 
+.footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  color: var(--text-2);
+}
+
 .site-footer strong {
   display: block;
   margin-bottom: 6px;
@@ -875,7 +972,11 @@ textarea:focus {
   .status-grid,
   .cards-grid.four-up,
   .feature-grid,
-  .forms-grid {
+  .forms-grid,
+  .split-overview,
+  .preview-card-grid,
+  .status-grid-compact,
+  .roadmap-columns {
     grid-template-columns: 1fr;
   }
 

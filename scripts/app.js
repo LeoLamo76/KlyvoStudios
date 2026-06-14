@@ -1,29 +1,30 @@
 import {
-  BetaCTA,
-  ContactSection,
   Footer,
-  FounderStory,
-  Hero,
+  HomePage,
+  BuildingPage,
+  ServicesPage,
+  AboutPage,
+  ContactPage,
   Navbar,
-  PlatformPreview,
-  Services,
-  StatusStrip,
 } from "./components.js";
 
 const app = document.querySelector("#app");
+const page = document.body.dataset.page || "home";
+
+const pageMap = {
+  home: HomePage,
+  building: BuildingPage,
+  services: ServicesPage,
+  about: AboutPage,
+  contact: ContactPage,
+};
+
+const renderPage = pageMap[page] || HomePage;
 
 app.innerHTML = `
   <div class="page-shell">
-    ${Navbar()}
-    <main class="main-content">
-      ${Hero()}
-      ${StatusStrip()}
-      ${Services()}
-      ${PlatformPreview()}
-      ${FounderStory()}
-      ${BetaCTA()}
-      ${ContactSection()}
-    </main>
+    ${Navbar(page)}
+    ${renderPage()}
     ${Footer()}
   </div>
 `;
@@ -32,7 +33,7 @@ const formMessages = {
   idle: "",
   sending: "Sending...",
   success: "Thanks. Your message is in and we'll get back to you soon.",
-  error: "That didn't send. Please try again in a moment.",
+  error: "We couldn't send this yet. Please try again or email klyvo.cloud@gmail.com.",
 };
 
 for (const form of document.querySelectorAll("form[data-form-endpoint]")) {

@@ -1,32 +1,42 @@
 export const routes = {
-  home: "/#home",
-  services: "/#services",
-  platform: "/#platform",
-  about: "/#about",
-  contact: "/#contact",
-  beta: "/#contact",
+  home: "/",
+  building: "/building.html",
+  services: "/services.html",
+  about: "/about.html",
+  contact: "/contact.html",
+  beta: "/contact.html#beta",
 };
 
 export const statusItems = [
   {
     title: "In active development",
-    body: "The workflow, product surface, and client process are all being refined in public.",
+    body: "Klyvo is being shaped around real creative workflows instead of padded launch copy.",
     iconClass: "",
   },
   {
-    title: "AI-assisted creative workflow",
-    body: "We use AI to speed up concepts and production, then shape the output with human judgment.",
-    iconClass: "cyan",
-  },
-  {
-    title: "Beta clients only",
-    body: "We're keeping the roster small so feedback can directly influence how Klyvo evolves.",
+    title: "Private beta stage",
+    body: "We are working with a small group of early users while the product surface gets tighter.",
     iconClass: "purple",
   },
   {
     title: "Human-reviewed output",
-    body: "Every concept, script, and creative direction pass is reviewed before it goes back to a brand.",
+    body: "Creative direction, scripts, and final concepts still pass through human judgment.",
     iconClass: "success",
+  },
+];
+
+export const audienceItems = [
+  {
+    title: "Growing product brands",
+    body: "Teams with good products but inconsistent paid creative or content throughput.",
+  },
+  {
+    title: "Founders and lean marketing teams",
+    body: "People who need sharper creative systems without building a full internal studio.",
+  },
+  {
+    title: "Brands testing new ad workflows",
+    body: "Early adopters who want service help now and a closer look at the platform as it grows.",
   },
 ];
 
@@ -41,7 +51,7 @@ export const services = [
   },
   {
     title: "AI-assisted scripts",
-    body: "Draft scripts and scene structures that save time without pretending the machine did all the thinking.",
+    body: "Generate hooks, concepts, and draft ad structures faster while keeping creative control in human hands.",
   },
   {
     title: "Brand creative direction",
@@ -49,29 +59,59 @@ export const services = [
   },
 ];
 
-export const platformFeatures = [
+export const platformFeatureCards = [
   {
-    title: "Product showcase mode",
-    body: "Clean, repeatable layouts for product-first creative concepts.",
+    title: "Product creative planning",
+    body: "Structure ad concepts around product inputs, campaign goals, and visual direction.",
   },
   {
-    title: "Cinematic mode",
-    body: "More motion-focused scene planning for ad videos and dramatic product storytelling.",
+    title: "Brand Kit organization",
+    body: "Store references, tone, colors, and brand rules in one place so projects stay consistent.",
   },
   {
-    title: "Brand kit",
-    body: "Store tone, palette, product references, and guidance in one place.",
+    title: "Project and history workflow",
+    body: "Keep concepts, versions, and creative iterations organized as work moves forward.",
   },
   {
-    title: "Captions",
-    body: "Draft text layers and headline options for short-form paid creative.",
+    title: "Early render queue interface",
+    body: "Track what is being prepared, reviewed, and rendered while the pipeline improves.",
   },
   {
-    title: "Render queue",
-    body: "Track what is processing, what is approved, and what still needs review.",
+    title: "AI Director",
+    body: "A guided creative layer being built to help shape scenes, pacing, and direction faster.",
   },
   {
-    title: "History and library",
-    body: "Keep past concepts, assets, and outputs organized so good work is reusable.",
+    title: "Automated editing workflow",
+    body: "A smoother system for turning raw assets and decisions into usable ad outputs.",
+  },
+];
+
+export const roadmapGroups = [
+  {
+    title: "What works today",
+    items: [
+      "Product creative planning",
+      "Brand Kit organization",
+      "Project/history workflow",
+      "Early render queue interface",
+    ],
+  },
+  {
+    title: "Building now",
+    items: [
+      "AI Director",
+      "Automated editing workflow",
+      "Captions and creative variations",
+      "Better render pipeline",
+    ],
+  },
+  {
+    title: "Planned",
+    items: [
+      "Team collaboration",
+      "Brand memory",
+      "Multi-platform export",
+      "Full self-serve SaaS access",
+    ],
   },
 ];

@@ -10,44 +10,59 @@ export const routes = {
 export const statusItems = [
   {
     title: "In active development",
-    body: "Klyvo is being shaped around real creative workflows instead of padded launch copy.",
+    body: "The product is still evolving, and real client work is helping shape what gets built next.",
     iconClass: "",
   },
   {
     title: "Private beta stage",
-    body: "We are working with a small group of early users while the product surface gets tighter.",
+    body: "We are keeping the early group small so feedback turns into product decisions quickly.",
     iconClass: "purple",
   },
   {
     title: "Human-reviewed output",
-    body: "Creative direction, scripts, and final concepts still pass through human judgment.",
+    body: "Creative direction, edits, and final concepts still pass through human judgment.",
     iconClass: "success",
   },
 ];
 
 export const audienceItems = [
   {
-    title: "Growing product brands",
-    body: "Teams with good products but inconsistent paid creative or content throughput.",
+    title: "Faster creative momentum",
+    body: "Less time staring at blank pages, more time shipping ad concepts and usable creative.",
   },
   {
-    title: "Founders and lean marketing teams",
-    body: "People who need sharper creative systems without building a full internal studio.",
+    title: "Better-looking ads",
+    body: "Sharper product videos, social ads, and concept directions that feel more considered.",
   },
   {
-    title: "Brands testing new ad workflows",
-    body: "Early adopters who want service help now and a closer look at the platform as it grows.",
+    title: "A human creative layer",
+    body: "AI helps speed things up, but the work is still shaped around taste, judgment, and brand fit.",
+  },
+];
+
+export const proofItems = [
+  {
+    title: "Concept-to-ad direction",
+    body: "Take a rough product idea and turn it into a clearer ad concept with stronger framing and a usable hook.",
+  },
+  {
+    title: "Raw clips to cleaner short-form",
+    body: "Turn messy footage into tighter edits that feel more intentional and more scroll-worthy.",
+  },
+  {
+    title: "Before and after creative refreshes",
+    body: "Rework flat product visuals into sharper layouts, stronger motion direction, and better ad presentation.",
   },
 ];
 
 export const services = [
   {
     title: "Product ad concepts",
-    body: "Hooks, visual directions, and layout ideas for products that need better paid creative.",
+    body: "Hooks, angles, and visual directions for products that need stronger paid creative.",
   },
   {
     title: "Short-form video edits",
-    body: "Ad-ready cuts built from raw clips, UGC footage, product shots, or generated support visuals.",
+    body: "Ad-ready cuts built from raw clips, UGC footage, product shots, or support visuals.",
   },
   {
     title: "AI-assisted scripts",
@@ -55,7 +70,7 @@ export const services = [
   },
   {
     title: "Brand creative direction",
-    body: "Messaging, visual consistency, and creative feedback for brands still finding their ad voice.",
+    body: "Messaging, consistency, and creative feedback for brands still finding their ad voice.",
   },
 ];
 

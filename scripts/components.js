@@ -1,6 +1,7 @@
 import {
   audienceItems,
   platformFeatureCards,
+  proofItems,
   roadmapGroups,
   routes,
   services,
@@ -21,10 +22,10 @@ function cardCollection(items, cardClass) {
     .join("");
 }
 
-function appMockup() {
+function appMockup({ compact = false } = {}) {
   return `
-    <div class="hero-product" aria-label="Klyvo product preview">
-      <div class="app-frame">
+    <div class="hero-product ${compact ? "hero-product-compact" : ""}" aria-label="Klyvo product preview">
+      <div class="app-frame ${compact ? "app-frame-compact" : ""}">
         <div class="app-topbar">
           <div class="window-dots">
             <span></span>
@@ -186,51 +187,50 @@ export function HomePage() {
     <main class="main-content">
       <section id="home" class="hero section home-hero">
         <div class="hero-copy">
-          <span class="pill">Early Access</span>
-          <h1>AI-assisted ad creation for growing brands.</h1>
+          <span class="pill">Klyvo Studios</span>
+          <h1>Ads that stop scrolling.</h1>
           <p class="lead">
-            Klyvo Studios helps brands turn product photos, ideas, and raw clips into stronger
-            ad creatives while the full Klyvo platform is still being built.
+            Product videos, social ads, and creative concepts for growing brands.
           </p>
           <p class="supporting-line">
-            Currently in active development and accepting a small group of beta clients.
+            Klyvo Studios helps brands turn product photos, ideas, and raw clips into stronger ads.
+            AI-assisted where useful, human-shaped where it matters.
           </p>
           <div class="hero-actions">
             <a class="button button-primary" href="${routes.beta}">Apply for Beta</a>
-            <a class="button button-secondary" href="${routes.building}">See What We're Building</a>
+            <a class="button button-secondary" href="${routes.services}">View Services</a>
           </div>
         </div>
-        ${appMockup()}
+        ${appMockup({ compact: true })}
       </section>
 
       <section class="section">
         <div class="section-heading compact-heading">
-          <span class="section-tag">Development status</span>
-          <h2>Built in public, not dressed up as finished.</h2>
+          <span class="section-tag">What you get</span>
+          <h2>Creative output that looks more considered and gets made faster.</h2>
           <p>
-            Klyvo is still taking shape. The point is to learn from real creative work now,
-            then turn that into a better product surface over time.
+            Most brands do not need another dashboard. They need better ads, better concepts,
+            and faster creative iteration without losing taste or control.
           </p>
         </div>
         <div class="status-grid status-grid-compact">
-          ${cardCollection(statusItems, "status-card")}
+          ${cardCollection(audienceItems, "status-card")}
         </div>
       </section>
 
       <section class="section preview-section">
         <div class="split-overview">
           <div class="section-heading compact-heading">
-            <span class="section-tag">How we help brands today</span>
-            <h2>Klyvo Studios is the service layer around the product.</h2>
+            <span class="section-tag">Early work</span>
+            <h2>Proof before promises.</h2>
             <p>
-              We help brands create stronger ad concepts, scripts, and short-form creative now,
-              while the Klyvo platform continues to develop behind the scenes.
+              Early concepts, mock ads, and creative refreshes matter here because people buy proof,
+              not platform language.
             </p>
-            <a class="button button-secondary" href="${routes.services}">Explore Services</a>
+            <a class="button button-secondary" href="${routes.contact}">Talk About a Project</a>
           </div>
           <div class="cards-grid preview-card-grid">
-            ${services
-              .slice(0, 3)
+            ${proofItems
               .map(
                 ({ title, body }) => `
                   <article class="info-card">
@@ -247,16 +247,16 @@ export function HomePage() {
       <section class="section preview-section">
         <div class="split-overview">
           <div class="section-heading compact-heading">
-            <span class="section-tag">Who it's for</span>
-            <h2>Best fit for brands that need better creative momentum.</h2>
+            <span class="section-tag">How we help brands today</span>
+            <h2>Klyvo Studios helps you ship stronger creative right now.</h2>
             <p>
-              This is for teams that want sharper ad workflows, not fake agency posturing
-              or a bloated enterprise platform.
+              The software is still being built. The service work is how brands can use the creative system now.
             </p>
-            <a class="button button-secondary" href="${routes.about}">Why This Exists</a>
+            <a class="button button-secondary" href="${routes.services}">See Services</a>
           </div>
           <div class="cards-grid preview-card-grid">
-            ${audienceItems
+            ${services
+              .slice(0, 3)
               .map(
                 ({ title, body }) => `
                   <article class="feature-card">
@@ -266,6 +266,23 @@ export function HomePage() {
                 `
               )
               .join("")}
+          </div>
+        </div>
+      </section>
+
+      <section class="section preview-section">
+        <div class="split-overview">
+          <div class="section-heading compact-heading">
+            <span class="section-tag">Behind the scenes</span>
+            <h2>Why Klyvo feels different.</h2>
+            <p>
+              Klyvo started as an attempt to make professional advertising more accessible for smaller brands.
+              The product story matters, but only after the outcome is clear.
+            </p>
+            <a class="button button-secondary" href="${routes.about}">Read the Story</a>
+          </div>
+          <div class="status-grid status-grid-compact">
+            ${cardCollection(statusItems, "status-card")}
           </div>
         </div>
       </section>
@@ -354,7 +371,7 @@ export function ServicesPage() {
         eyebrow: "Services",
         title: "How we're helping brands today",
         text:
-          "Klyvo Studios is the service layer around the product. We help brands create better ad concepts, scripts, and short-form creative while the Klyvo platform continues developing.",
+          "Klyvo Studios is the service layer around the product. We help brands create better ads, clearer concepts, and sharper short-form creative while the Klyvo platform continues developing.",
         ctaLabel: "Contact or Apply",
         ctaHref: routes.contact,
       })}
@@ -406,15 +423,15 @@ export function AboutPage() {
       <section class="section founder-section">
         <div class="founder-card">
           <p class="founder-quote">
+            Klyvo started as an attempt to make professional advertising more accessible for smaller brands.
+          </p>
+          <p>
             Klyvo isn't finished yet. That's the point. Early users help shape what gets built
             instead of being handed a generic tool that missed the real problem.
           </p>
           <p>
             Klyvo Studios is how that work happens today: real brand projects, direct feedback,
             and a product that is learning from actual creative pressure instead of a fictional roadmap.
-          </p>
-          <p>
-            The ambition is serious. The tone is just honest about where the product is right now.
           </p>
         </div>
       </section>
@@ -439,6 +456,10 @@ export function ContactPage() {
             <h2>klyvo.cloud@gmail.com</h2>
             <p>
               If the forms are not working yet, email us directly. We couldn't send this yet. Please try again or email klyvo.cloud@gmail.com.
+            </p>
+            <p>
+              Response time: 24-72 hours. Klyvo Studios is currently accepting a limited number of
+              projects while workflows are being refined.
             </p>
           </div>
 

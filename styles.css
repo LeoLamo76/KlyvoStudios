@@ -321,6 +321,11 @@ textarea {
   position: relative;
 }
 
+.hero-product-compact .app-frame {
+  max-width: 640px;
+  margin-left: auto;
+}
+
 .hero-product::before,
 .hero-product::after {
   content: "";
@@ -1054,6 +1059,10 @@ textarea:focus {
     padding: 44px 0;
   }
 
+  .section-heading {
+    margin-bottom: 20px;
+  }
+
   .page-hero {
     padding-top: 58px;
     padding-bottom: 18px;
@@ -1073,6 +1082,10 @@ textarea:focus {
   .app-frame {
     min-height: 0;
     border-radius: 24px;
+  }
+
+  .hero-product {
+    width: 100%;
   }
 
   .app-content {
@@ -1116,7 +1129,7 @@ textarea:focus {
   }
 
   .brand-text small {
-    font-size: 11px;
+    display: none;
   }
 
   .hero {
@@ -1132,6 +1145,23 @@ textarea:focus {
     max-width: 100%;
   }
 
+  .pill {
+    margin-bottom: 14px;
+    padding: 7px 12px;
+  }
+
+  h1 {
+    font-size: clamp(2.35rem, 11vw, 3rem);
+  }
+
+  .lead {
+    margin-top: 18px;
+  }
+
+  .supporting-line {
+    margin-top: 14px;
+  }
+
   .button,
   .hero-actions .button {
     width: 100%;
@@ -1139,6 +1169,10 @@ textarea:focus {
 
   .hero-actions {
     margin-top: 24px;
+  }
+
+  .preview-section {
+    padding-top: 16px;
   }
 
   .pill,
@@ -1172,6 +1206,13 @@ textarea:focus {
     font-size: 1.45rem;
   }
 
+  .mock-button {
+    min-height: 38px;
+    padding: 0 14px;
+    border-radius: 14px;
+    font-size: 14px;
+  }
+
   .mode-card,
   .dash-card,
   .status-card,
@@ -1185,6 +1226,46 @@ textarea:focus {
   .mode-preview {
     min-height: 0;
     border-radius: 18px;
+  }
+
+  .hero-product-compact .app-frame {
+    border-radius: 22px;
+  }
+
+  .hero-product-compact .app-topbar {
+    padding: 12px 14px;
+  }
+
+  .hero-product-compact .window-dots span:nth-child(3),
+  .hero-product-compact .topbar-chip,
+  .hero-product-compact .mode-card:last-child,
+  .hero-product-compact .dashboard-grid {
+    display: none;
+  }
+
+  .hero-product-compact .app-content {
+    gap: 12px;
+    padding: 12px;
+  }
+
+  .hero-product-compact .content-header h2 {
+    font-size: 1.2rem;
+  }
+
+  .hero-product-compact .mode-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-product-compact .mode-card {
+    padding: 14px;
+  }
+
+  .hero-product-compact .mode-card p {
+    font-size: 0.9rem;
+  }
+
+  .hero-product-compact .mode-preview {
+    margin-top: 14px;
   }
 
   .showcase-preview {
@@ -1231,6 +1312,12 @@ textarea:focus {
   .founder-card,
   .roadmap-status-card {
     padding: 20px;
+  }
+
+  .status-card,
+  .info-card,
+  .feature-card {
+    border-radius: 22px;
   }
 
   input,

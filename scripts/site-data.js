@@ -27,16 +27,16 @@ export const statusItems = [
 
 export const audienceItems = [
   {
-    title: "Faster creative momentum",
-    body: "Less time staring at blank pages, more time shipping ad concepts and usable creative.",
+    title: "Better product presentation",
+    body: "Creative that makes products look more polished, more deliberate, and more ready to buy.",
   },
   {
-    title: "Better-looking ads",
-    body: "Sharper product videos, social ads, and concept directions that feel more considered.",
+    title: "Stronger ad concepts",
+    body: "Hooks, angles, and visuals that feel more like real advertising and less like filler content.",
   },
   {
-    title: "A human creative layer",
-    body: "AI helps speed things up, but the work is still shaped around taste, judgment, and brand fit.",
+    title: "Faster turnaround",
+    body: "A leaner creative process without the cost and drag of a traditional agency setup.",
   },
 ];
 
@@ -58,19 +58,34 @@ export const proofItems = [
 export const services = [
   {
     title: "Product ad concepts",
-    body: "Hooks, angles, and visual directions for products that need stronger paid creative.",
+    body: "Creative concepts built to give products a clearer hook, better framing, and stronger ad direction.",
   },
   {
     title: "Short-form video edits",
-    body: "Ad-ready cuts built from raw clips, UGC footage, product shots, or support visuals.",
+    body: "Short-form edits for paid social, product launches, and content that needs to look sharper fast.",
   },
   {
     title: "AI-assisted scripts",
-    body: "Generate hooks, concepts, and draft ad structures faster while keeping creative control in human hands.",
+    body: "Hooks, structures, and draft scripts developed faster while keeping the creative judgment human.",
   },
   {
     title: "Brand creative direction",
-    body: "Messaging, consistency, and creative feedback for brands still finding their ad voice.",
+    body: "Creative direction that helps a brand look more consistent, more professional, and easier to trust.",
+  },
+];
+
+export const processSteps = [
+  {
+    title: "Direction first",
+    body: "We start with the product, the audience, and the kind of ad you actually need to make.",
+  },
+  {
+    title: "Creative in motion",
+    body: "Concepts, scripts, product visuals, and short-form edits get shaped into something worth testing.",
+  },
+  {
+    title: "Review and delivery",
+    body: "You get creative that is easier to review, refine, and put to work without endless back-and-forth.",
   },
 ];
 

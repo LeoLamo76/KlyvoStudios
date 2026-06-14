@@ -157,7 +157,18 @@ export function Navbar(page) {
         </span>
       </a>
 
-      <nav class="nav-links" aria-label="Main navigation">
+      <button
+        class="mobile-nav-toggle"
+        type="button"
+        aria-expanded="false"
+        aria-controls="site-nav"
+        aria-label="Toggle navigation"
+      >
+        <span></span>
+        <span></span>
+      </button>
+
+      <nav id="site-nav" class="nav-links" aria-label="Main navigation">
         <a class="${pageKey === "home" ? "is-active" : ""}" href="${routes.home}">Home</a>
         <a class="${pageKey === "building" ? "is-active" : ""}" href="${routes.building}">What We're Building</a>
         <a class="${pageKey === "services" ? "is-active" : ""}" href="${routes.services}">Services</a>

@@ -29,6 +29,26 @@ app.innerHTML = `
   </div>
 `;
 
+const navToggle = document.querySelector(".mobile-nav-toggle");
+const navLinks = document.querySelector(".nav-links");
+
+if (navToggle instanceof HTMLButtonElement && navLinks instanceof HTMLElement) {
+  navToggle.addEventListener("click", () => {
+    const nextExpanded = navToggle.getAttribute("aria-expanded") !== "true";
+    navToggle.setAttribute("aria-expanded", String(nextExpanded));
+    navLinks.dataset.open = String(nextExpanded);
+    document.body.classList.toggle("nav-open", nextExpanded);
+  });
+
+  for (const navLink of navLinks.querySelectorAll("a")) {
+    navLink.addEventListener("click", () => {
+      navToggle.setAttribute("aria-expanded", "false");
+      navLinks.dataset.open = "false";
+      document.body.classList.remove("nav-open");
+    });
+  }
+}
+
 const formMessages = {
   idle: "",
   sending: "Sending...",

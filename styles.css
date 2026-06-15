@@ -53,6 +53,18 @@ textarea {
   font: inherit;
 }
 
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus {
+  -webkit-text-fill-color: var(--text);
+  box-shadow: 0 0 0 1000px rgba(6, 11, 17, 0.98) inset;
+  transition: background-color 9999s ease-in-out 0s;
+  caret-color: var(--text);
+}
+
 button:disabled {
   cursor: wait;
   opacity: 0.72;
@@ -766,7 +778,7 @@ textarea {
 }
 
 .page-hero {
-  padding-top: 82px;
+  padding-top: 118px;
   padding-bottom: 30px;
 }
 
@@ -888,7 +900,20 @@ textarea {
 }
 
 .contact-copy {
+  display: grid;
+  gap: 10px;
   max-width: 680px;
+}
+
+.contact-copy h2 {
+  max-width: 14ch;
+  font-size: clamp(1.8rem, 4vw, 2.8rem);
+  line-height: 1.04;
+}
+
+.contact-section,
+#beta {
+  scroll-margin-top: 138px;
 }
 
 .forms-grid {
@@ -1079,6 +1104,11 @@ textarea:focus {
     font-size: 0.98rem;
   }
 
+  .contact-copy h2 {
+    max-width: 15ch;
+    font-size: clamp(1.65rem, 5vw, 2.3rem);
+  }
+
   .app-frame {
     min-height: 0;
     border-radius: 24px;
@@ -1135,6 +1165,15 @@ textarea:focus {
   .hero {
     gap: 22px;
     padding-top: 28px;
+  }
+
+  .page-hero {
+    padding-top: 44px;
+  }
+
+  .contact-copy h2 {
+    max-width: 100%;
+    font-size: clamp(1.45rem, 7vw, 2rem);
   }
 
   .home-hero {

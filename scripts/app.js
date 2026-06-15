@@ -53,7 +53,7 @@ const formMessages = {
   idle: "",
   sending: "Sending...",
   success: "Thanks. Your message is in and we'll get back to you soon.",
-  error: "We couldn't send this yet. Please try again or email klyvo.cloud@gmail.com.",
+  error: "That didn't go through just now. Prefer email? Reach us at klyvo.cloud@gmail.com.",
 };
 
 for (const form of document.querySelectorAll("form[data-form-endpoint]")) {

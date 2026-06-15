@@ -198,7 +198,7 @@ export function HomePage() {
             creative without the cost and complexity of a traditional agency.
           </p>
           <div class="hero-actions">
-            <a class="button button-primary" href="${routes.contact}">Talk About a Project</a>
+            <a class="button button-primary" href="${routes.contact}">Start a Project</a>
             <a class="button button-secondary" href="${routes.services}">View Services</a>
           </div>
         </div>
@@ -296,10 +296,10 @@ export function BuildingPage() {
   return `
     <main class="main-content">
       ${pageHero({
-        eyebrow: "Our process",
-        title: "How projects move from idea to ad.",
+        eyebrow: "Behind Klyvo",
+        title: "Creative system in progress.",
         text:
-          "Klyvo Studios is built to help brands move faster from rough product assets to stronger ad creative, without dragging them through a bloated agency process.",
+          "See how Klyvo Studios is shaping a better creative workflow around product videos, social ads, ad concepts, and client feedback.",
       })}
 
       <section class="section">
@@ -332,7 +332,7 @@ export function BuildingPage() {
             <span class="section-tag">Behind Klyvo</span>
             <h2>The internal system helping the studio move faster.</h2>
             <p>
-              Klyvo is still being built carefully. It supports the studio workflow now, and it is growing around real creative work instead of startup theater.
+              Klyvo is still being built carefully. It supports the studio workflow now, and it is growing around real creative work and client feedback.
             </p>
           </div>
           ${appMockup()}
@@ -369,7 +369,7 @@ export function ServicesPage() {
         title: "How we're helping brands today",
         text:
           "Klyvo Studios helps brands create better ads, clearer concepts, and sharper short-form creative without the overhead of a traditional agency.",
-        ctaLabel: "Contact or Apply",
+        ctaLabel: "Start a Project",
         ctaHref: routes.contact,
       })}
 
@@ -399,7 +399,7 @@ export function ServicesPage() {
           </div>
           <div class="hero-actions">
             <a class="button button-primary" href="${routes.contact}">Start a Project</a>
-            <a class="button button-secondary" href="${routes.beta}">Ask About Beta</a>
+            <a class="button button-secondary" href="${routes.services}">View Services</a>
           </div>
         </div>
       </section>
@@ -458,6 +458,9 @@ export function ContactPage() {
               Response time: 24-72 hours. Klyvo Studios is currently accepting a limited number of
               projects while workflows are being refined.
             </p>
+            <p>
+              Prefer email? Reach us at klyvo.cloud@gmail.com.
+            </p>
           </div>
 
           <div class="forms-grid">
@@ -480,7 +483,7 @@ export function ContactPage() {
                   What do you need help creating?
                   <textarea name="message" rows="5" required></textarea>
                 </label>
-                <button class="button button-secondary form-button" type="submit">Send message</button>
+                <button class="button button-primary form-button" type="submit">Start a Project</button>
                 <p class="form-status" aria-live="polite"></p>
               </form>
             </div>
@@ -505,10 +508,10 @@ export function ContactPage() {
                   <textarea name="workflow_problem" rows="4" required></textarea>
                 </label>
                 <label>
-                  Are you looking for service help now, beta software access, or both?
-                  <input name="interest_type" type="text" placeholder="Service help, beta access, or both" required>
+                  Are you looking for project help now, beta access, or both?
+                  <input name="interest_type" type="text" placeholder="Project help, beta access, or both" required>
                 </label>
-                <button class="button button-primary form-button" type="submit">Apply for Beta</button>
+                <button class="button button-secondary form-button" type="submit">Ask About Beta</button>
                 <p class="form-status" aria-live="polite"></p>
               </form>
             </div>
@@ -524,14 +527,16 @@ export function BetaCTA() {
     <section class="section cta-section">
       <div class="cta-panel">
         <div>
-          <span class="section-tag">Early group</span>
-          <h2>Want to be part of the early group?</h2>
+          <span class="section-tag">Need creative help?</span>
+          <h2>Ready to make your ads look stronger?</h2>
           <p>
-            We're accepting a small number of beta clients to test workflows, give feedback,
-            and shape what Klyvo becomes.
+            Start with a project conversation first. If beta access makes sense afterward, we can talk about that too.
           </p>
         </div>
-        <a class="button button-primary" href="${routes.beta}">Apply for Beta</a>
+        <div class="hero-actions">
+          <a class="button button-primary" href="${routes.contact}">Start a Project</a>
+          <a class="button button-secondary" href="${routes.services}">View Services</a>
+        </div>
       </div>
     </section>
   `;
@@ -545,7 +550,7 @@ export function Footer() {
         <p>Service today. Product in progress.</p>
       </div>
       <div class="footer-links">
-        <a href="${routes.building}">What We're Building</a>
+        <a href="${routes.building}">Behind Klyvo</a>
         <a href="${routes.services}">Services</a>
         <a href="${routes.about}">About</a>
         <a href="${routes.contact}">Contact</a>

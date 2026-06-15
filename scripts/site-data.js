@@ -91,28 +91,28 @@ export const processSteps = [
 
 export const platformFeatureCards = [
   {
-    title: "Product creative planning",
+    title: "Ad concept planning",
     body: "Structure ad concepts around product inputs, campaign goals, and visual direction.",
   },
   {
-    title: "Brand Kit organization",
-    body: "Store references, tone, colors, and brand rules in one place so projects stay consistent.",
+    title: "Consistent brand creative",
+    body: "Keep references, tone, and visual direction aligned so projects feel more coherent from start to finish.",
   },
   {
-    title: "Project and history workflow",
-    body: "Keep concepts, versions, and creative iterations organized as work moves forward.",
+    title: "Project reviews and revisions",
+    body: "Keep concepts, versions, and review notes organized as creative work moves forward.",
   },
   {
-    title: "Early render queue interface",
-    body: "Track what is being prepared, reviewed, and rendered while the pipeline improves.",
+    title: "Projects in progress",
+    body: "Track what is being prepared, reviewed, and delivered while the workflow gets tighter.",
   },
   {
-    title: "AI Director",
+    title: "Creative direction",
     body: "A guided creative layer being built to help shape scenes, pacing, and direction faster.",
   },
   {
-    title: "Automated editing workflow",
-    body: "A smoother system for turning raw assets and decisions into usable ad outputs.",
+    title: "Faster ad production",
+    body: "A smoother system for turning raw assets and creative decisions into usable ad outputs.",
   },
 ];
 
@@ -129,10 +129,10 @@ export const roadmapGroups = [
   {
     title: "Building now",
     items: [
-      "AI Director",
-      "Automated editing workflow",
+      "Creative direction",
+      "Faster ad production",
       "Captions and creative variations",
-      "Better render pipeline",
+      "Smoother production workflow",
     ],
   },
   {
@@ -141,7 +141,7 @@ export const roadmapGroups = [
       "Team collaboration",
       "Brand memory",
       "Multi-platform export",
-      "Full self-serve SaaS access",
+      "Broader client access",
     ],
   },
 ];

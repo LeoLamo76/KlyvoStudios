@@ -38,7 +38,7 @@ if (window.location.hostname === "localhost" || window.location.hostname === "12
   for (const link of document.querySelectorAll('link[data-favicon]')) {
     const originalHref = link.getAttribute("href");
 
-    if (!originalHref) {
+    if (!originalHref || originalHref.startsWith("data:")) {
       continue;
     }
 

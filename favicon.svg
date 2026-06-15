@@ -6,8 +6,10 @@
     </linearGradient>
   </defs>
   <rect width="512" height="512" fill="#000000"/>
-  <path fill="url(#klyvoMark)" d="M136 103h74v306h-74z"/>
-  <path fill="url(#klyvoMark)" d="M210 226l58-58v176l-58-58z"/>
-  <path fill="url(#klyvoMark)" d="M315 103h87L292 224l-55-33z"/>
-  <path fill="url(#klyvoMark)" d="M292 308l110 101h-89l-76-76z"/>
+  <g transform="translate(-34 -64) scale(1.22)">
+    <path fill="url(#klyvoMark)" d="M136 103h74v306h-74z"/>
+    <path fill="url(#klyvoMark)" d="M210 226l58-58v176l-58-58z"/>
+    <path fill="url(#klyvoMark)" d="M315 103h87L292 224l-55-33z"/>
+    <path fill="url(#klyvoMark)" d="M292 308l110 101h-89l-76-76z"/>
+  </g>
 </svg>

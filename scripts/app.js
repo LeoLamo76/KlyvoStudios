@@ -32,6 +32,21 @@ app.innerHTML = `
 const navToggle = document.querySelector(".mobile-nav-toggle");
 const navLinks = document.querySelector(".nav-links");
 
+if (window.location.hostname === "localhost" || window.location.hostname === "127.0.0.1") {
+  const faviconStamp = `v=${Date.now()}`;
+
+  for (const link of document.querySelectorAll('link[data-favicon]')) {
+    const originalHref = link.getAttribute("href");
+
+    if (!originalHref) {
+      continue;
+    }
+
+    const baseHref = originalHref.split("?")[0];
+    link.setAttribute("href", `${baseHref}?${faviconStamp}`);
+  }
+}
+
 if (navToggle instanceof HTMLButtonElement && navLinks instanceof HTMLElement) {
   navToggle.addEventListener("click", () => {
     const nextExpanded = navToggle.getAttribute("aria-expanded") !== "true";

@@ -1,13 +1,13 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
   <defs>
-    <linearGradient id="klyvoGradient" x1="120" y1="72" x2="392" y2="440" gradientUnits="userSpaceOnUse">
-      <stop offset="0%" stop-color="#6B6BFF"/>
-      <stop offset="100%" stop-color="#4F46E5"/>
+    <linearGradient id="klyvoGradient" x1="116" y1="78" x2="404" y2="438" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#6366F1"/>
+      <stop offset="1" stop-color="#4F46E5"/>
     </linearGradient>
   </defs>
   <rect width="512" height="512" fill="#000000"/>
-  <path fill="url(#klyvoGradient)" d="M134 83h72v346h-72z"/>
-  <path fill="url(#klyvoGradient)" d="M206 223l78-78v222l-78-78z"/>
-  <path fill="url(#klyvoGradient)" d="M312 83h100L298 209l-58-36z"/>
-  <path fill="url(#klyvoGradient)" d="M298 303l114 126H320l-80-90z"/>
+  <path fill="url(#klyvoGradient)" d="M116 72h88v368h-88z"/>
+  <path fill="url(#klyvoGradient)" d="M204 223l74-74v214l-74-74z"/>
+  <path fill="url(#klyvoGradient)" d="M322 72h118L298 222l-65-40z"/>
+  <path fill="url(#klyvoGradient)" d="M298 304l142 136H324l-91-88z"/>
 </svg>

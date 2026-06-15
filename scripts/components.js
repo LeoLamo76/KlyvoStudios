@@ -39,7 +39,9 @@ function appMockup({ compact = false } = {}) {
 
         <div class="app-body">
           <aside class="app-sidebar">
-            <div class="sidebar-brand">K</div>
+            <div class="sidebar-brand" aria-hidden="true">
+              <img src="assets/klyvo-logo-mark.png" alt="">
+            </div>
             <nav class="sidebar-nav">
               <span class="active">Concepts</span>
               <span>Projects</span>
@@ -152,7 +154,9 @@ export function Navbar(page) {
   return `
     <header class="site-header">
       <a class="brand" href="${routes.home}" aria-label="Klyvo Studios home">
-        <span class="brand-mark">K</span>
+        <span class="brand-mark" aria-hidden="true">
+          <img src="assets/klyvo-logo-mark.png" alt="">
+        </span>
         <span class="brand-text">
           <strong>Klyvo Studios</strong>
           <small>Creative studio</small>

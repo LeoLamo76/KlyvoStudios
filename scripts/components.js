@@ -444,10 +444,10 @@ export function ContactPage() {
   return `
     <main class="main-content">
       ${pageHero({
-        eyebrow: "Contact / Apply",
+        eyebrow: "Beta client inquiry",
         title: "Choose the right next step.",
         text:
-          "Reach out about a project, ask about beta access, or do both if you want service help now and want to follow what Klyvo becomes.",
+          "Reach out about a product video, social ad, or creative support. Klyvo Studios is working with a limited number of beta clients right now.",
       })}
 
       <section id="contact" class="section contact-section">
@@ -469,7 +469,7 @@ export function ContactPage() {
 
           <div class="forms-grid">
             <div class="form-card">
-              <h3>Contact about a project</h3>
+              <h3>Beta client inquiry</h3>
               <form name="contact" method="post" data-form-endpoint="/api/contact">
                 <label>
                   Name
@@ -487,35 +487,7 @@ export function ContactPage() {
                   What do you need help creating?
                   <textarea name="message" rows="5" required></textarea>
                 </label>
-                <button class="button button-primary form-button" type="submit">Start a Project</button>
-                <p class="form-status" aria-live="polite"></p>
-              </form>
-            </div>
-
-            <div id="beta" class="form-card beta-card">
-              <h3>Ask about beta access</h3>
-              <form name="beta-access" method="post" data-form-endpoint="/api/beta-apply">
-                <label>
-                  Work email
-                  <input name="email" type="email" autocomplete="email" required>
-                </label>
-                <label>
-                  Brand/company
-                  <input name="company" type="text" autocomplete="organization" required>
-                </label>
-                <label>
-                  Website or social link
-                  <input name="website_or_social" type="url" inputmode="url" placeholder="https://">
-                </label>
-                <label>
-                  What kind of ad workflow are you trying to improve?
-                  <textarea name="workflow_problem" rows="4" required></textarea>
-                </label>
-                <label>
-                  Are you looking for project help now, beta access, or both?
-                  <input name="interest_type" type="text" placeholder="Project help, beta access, or both" required>
-                </label>
-                <button class="button button-secondary form-button" type="submit">Ask About Beta</button>
+                <button class="button button-primary form-button" type="submit">Send Inquiry</button>
                 <p class="form-status" aria-live="polite"></p>
               </form>
             </div>

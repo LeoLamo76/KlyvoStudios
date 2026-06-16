@@ -32,58 +32,6 @@ app.innerHTML = `
 const navToggle = document.querySelector(".mobile-nav-toggle");
 const navLinks = document.querySelector(".nav-links");
 
-if (window.location.hostname === "localhost" || window.location.hostname === "127.0.0.1") {
-  const faviconStamp = `v=${Date.now()}`;
-
-  for (const link of document.querySelectorAll('link[data-favicon]')) {
-    const originalHref = link.getAttribute("href");
-
-    if (!originalHref || originalHref.startsWith("data:")) {
-      continue;
-    }
-
-    const baseHref = originalHref.split("?")[0];
-    link.setAttribute("href", `${baseHref}?${faviconStamp}`);
-  }
-}
-
-const forceKlyvoTabIcon = () => {
-  const source = new Image();
-
-  source.onload = () => {
-    const canvas = document.createElement("canvas");
-    canvas.width = 512;
-    canvas.height = 512;
-
-    const context = canvas.getContext("2d");
-
-    if (!context) {
-      return;
-    }
-
-    context.drawImage(source, 0, 0, 512, 512);
-
-    const iconHref = canvas.toDataURL("image/png");
-
-    for (const link of document.querySelectorAll('link[rel~="icon"]')) {
-      link.setAttribute("type", "image/png");
-      link.setAttribute("sizes", "512x512");
-      link.setAttribute("href", iconHref);
-    }
-
-    const tabIcon = document.createElement("link");
-    tabIcon.rel = "icon";
-    tabIcon.type = "image/png";
-    tabIcon.sizes = "512x512";
-    tabIcon.href = iconHref;
-    document.head.appendChild(tabIcon);
-  };
-
-  source.src = `/assets/klyvo-tab-logo-512.png?force=${Date.now()}`;
-};
-
-forceKlyvoTabIcon();
-
 if (navToggle instanceof HTMLButtonElement && navLinks instanceof HTMLElement) {
   navToggle.addEventListener("click", () => {
     const nextExpanded = navToggle.getAttribute("aria-expanded") !== "true";

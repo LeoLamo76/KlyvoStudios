@@ -7,7 +7,7 @@ import {
   routes,
   services,
   statusItems,
-} from "./site-data.js";
+} from "./site-data.js?v=20260616c";
 
 function cardCollection(items, cardClass) {
   return items

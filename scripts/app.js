@@ -56,6 +56,35 @@ const formMessages = {
   error: "We couldn't send that right now. Prefer email? Reach us at klyvo.cloud@gmail.com.",
 };
 
+async function submitToNetlifyForm(form, payload) {
+  const formName = form.getAttribute("name");
+
+  if (!formName) {
+    throw new Error("Missing form name");
+  }
+
+  const body = new URLSearchParams();
+  body.set("form-name", formName);
+
+  for (const [key, value] of Object.entries(payload)) {
+    if (typeof value === "string") {
+      body.set(key, value);
+    }
+  }
+
+  const response = await fetch("/", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/x-www-form-urlencoded",
+    },
+    body: body.toString(),
+  });
+
+  if (!response.ok) {
+    throw new Error("Netlify form submission failed");
+  }
+}
+
 for (const form of document.querySelectorAll("form[data-form-endpoint]")) {
   const status = form.querySelector(".form-status");
   const button = form.querySelector('button[type="submit"]');
@@ -93,8 +122,17 @@ for (const form of document.querySelectorAll("form[data-form-endpoint]")) {
       status.dataset.state = "success";
     } catch (error) {
       console.error(error);
-      status.textContent = formMessages.error;
-      status.dataset.state = "error";
+
+      try {
+        await submitToNetlifyForm(form, payload);
+        form.reset();
+        status.textContent = formMessages.success;
+        status.dataset.state = "success";
+      } catch (fallbackError) {
+        console.error(fallbackError);
+        status.textContent = formMessages.error;
+        status.dataset.state = "error";
+      }
     } finally {
       button.disabled = false;
     }

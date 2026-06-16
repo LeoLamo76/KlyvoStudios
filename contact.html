@@ -34,6 +34,37 @@
     <link rel="stylesheet" href="styles.css">
   </head>
   <body data-page="contact">
+    <form
+      name="contact"
+      method="post"
+      action="/contact.html?submitted=contact"
+      data-netlify="true"
+      netlify-honeypot="bot-field"
+      hidden
+    >
+      <input type="hidden" name="form-name" value="contact">
+      <input type="text" name="bot-field">
+      <input type="text" name="name">
+      <input type="email" name="email">
+      <input type="text" name="company">
+      <textarea name="message"></textarea>
+    </form>
+    <form
+      name="beta-access"
+      method="post"
+      action="/contact.html?submitted=beta"
+      data-netlify="true"
+      netlify-honeypot="bot-field"
+      hidden
+    >
+      <input type="hidden" name="form-name" value="beta-access">
+      <input type="text" name="bot-field">
+      <input type="email" name="email">
+      <input type="text" name="company">
+      <input type="url" name="website_or_social">
+      <textarea name="workflow_problem"></textarea>
+      <input type="text" name="interest_type">
+    </form>
     <div id="app"></div>
     <script type="module" src="scripts/app.js"></script>
   </body>

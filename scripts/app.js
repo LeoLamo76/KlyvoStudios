@@ -6,7 +6,7 @@ import {
   AboutPage,
   ContactPage,
   Navbar,
-} from "./components.js?v=20260616c";
+} from "./components.js?v=20260621a";
 
 const app = document.querySelector("#app");
 const page = document.body.dataset.page || "home";

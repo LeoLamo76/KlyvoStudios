@@ -411,6 +411,13 @@ textarea {
   min-height: 670px;
 }
 
+.app-video-frame {
+  min-height: 0;
+  background:
+    radial-gradient(circle at top right, rgba(124, 58, 237, 0.12), transparent 30%),
+    linear-gradient(180deg, rgba(17, 24, 33, 0.98), rgba(8, 13, 21, 1));
+}
+
 .app-topbar {
   display: flex;
   align-items: center;
@@ -450,6 +457,34 @@ textarea {
   border: 1px solid rgba(124, 58, 237, 0.35);
   background: rgba(124, 58, 237, 0.12);
   color: #cfb6ff;
+}
+
+.video-badge {
+  padding: 6px 10px;
+  border: 1px solid rgba(59, 130, 246, 0.24);
+  border-radius: 999px;
+  background: rgba(59, 130, 246, 0.1);
+  color: var(--text-2);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.app-video-shell {
+  position: relative;
+  padding: 18px;
+}
+
+.app-showcase-video {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  border: 1px solid rgba(51, 65, 85, 0.82);
+  border-radius: 24px;
+  background: #05080d;
+  object-fit: cover;
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.02);
 }
 
 .app-body {
@@ -794,6 +829,24 @@ textarea {
   padding-bottom: 30px;
 }
 
+.contact-page-hero {
+  padding-top: 142px;
+  padding-bottom: 20px;
+}
+
+.contact-page-heading {
+  width: min(860px, 100%);
+}
+
+.contact-page-hero .page-title {
+  max-width: 9ch;
+  font-size: clamp(2.8rem, 5.2vw, 4.05rem);
+}
+
+.contact-page-hero .section-heading p {
+  max-width: 780px;
+}
+
 .page-title {
   max-width: 12ch;
   margin-top: 2px;
@@ -928,9 +981,39 @@ textarea {
   scroll-margin-top: 138px;
 }
 
+.contact-section {
+  padding-top: 20px;
+}
+
 .forms-grid {
   grid-template-columns: repeat(2, minmax(0, 1fr));
   margin-top: 28px;
+}
+
+.contact-panel-single {
+  display: grid;
+  grid-template-columns: minmax(320px, 0.78fr) minmax(0, 1fr);
+  align-items: start;
+  gap: 28px;
+}
+
+.contact-panel-single .contact-copy {
+  max-width: 100%;
+}
+
+.contact-panel-single .contact-copy h2 {
+  max-width: 100%;
+  font-size: clamp(1.9rem, 3vw, 2.45rem);
+}
+
+.forms-grid-single {
+  grid-template-columns: minmax(0, 1fr);
+  width: 100%;
+  margin-top: 0;
+}
+
+.form-card-inquiry {
+  width: 100%;
 }
 
 .form-card {
@@ -1040,6 +1123,7 @@ textarea:focus {
   .status-grid,
   .cards-grid.four-up,
   .feature-grid,
+  .contact-panel-single,
   .forms-grid,
   .split-overview,
   .preview-card-grid,
@@ -1107,6 +1191,10 @@ textarea:focus {
   .page-hero {
     padding-top: 58px;
     padding-bottom: 18px;
+  }
+
+  .contact-page-hero {
+    padding-top: 82px;
   }
 
   .lead,
@@ -1185,6 +1273,10 @@ textarea:focus {
 
   .page-hero {
     padding-top: 44px;
+  }
+
+  .contact-page-hero {
+    padding-top: 56px;
   }
 
   .contact-copy h2 {
@@ -1291,8 +1383,17 @@ textarea:focus {
     padding: 12px 14px;
   }
 
+  .hero-product-compact .app-video-shell {
+    padding: 12px;
+  }
+
+  .hero-product-compact .app-showcase-video {
+    aspect-ratio: 4 / 5;
+    border-radius: 18px;
+  }
+
   .hero-product-compact .window-dots span:nth-child(3),
-  .hero-product-compact .topbar-chip,
+  .hero-product-compact .video-badge,
   .hero-product-compact .mode-card:last-child,
   .hero-product-compact .dashboard-grid {
     display: none;

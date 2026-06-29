@@ -7,7 +7,7 @@ import {
   routes,
   services,
   statusItems,
-} from "./site-data.js?v=20260616c";
+} from "./site-data.js?v=20260621a";
 
 function cardCollection(items, cardClass) {
   return items
@@ -26,120 +26,38 @@ function cardCollection(items, cardClass) {
 function appMockup({ compact = false } = {}) {
   return `
     <div class="hero-product ${compact ? "hero-product-compact" : ""}" aria-label="Klyvo product preview">
-      <div class="app-frame ${compact ? "app-frame-compact" : ""}">
+      <div class="app-frame app-video-frame ${compact ? "app-frame-compact" : ""}">
         <div class="app-topbar">
           <div class="window-dots">
             <span></span>
             <span></span>
             <span></span>
           </div>
-          <div class="topbar-title">Klyvo / Studio</div>
-          <div class="topbar-chip">Creative workflow</div>
+          <div class="video-badge">Klyvo Studios</div>
         </div>
-
-        <div class="app-body">
-          <aside class="app-sidebar">
-            <div class="sidebar-brand" aria-hidden="true">
-              <img src="assets/klyvo-logo-mark.png" alt="">
-            </div>
-            <nav class="sidebar-nav">
-              <span class="active">Concepts</span>
-              <span>Projects</span>
-              <span>Reviews</span>
-              <span>Delivery</span>
-              <span>Archive</span>
-            </nav>
-          </aside>
-
-          <div class="app-content">
-            <div class="content-header">
-              <div>
-                <p class="mini-label">Studio board</p>
-                <h2>Build stronger ad creative</h2>
-              </div>
-              <button class="mock-button">Start concept</button>
-            </div>
-
-            <div class="mode-grid">
-              <article class="mode-card primary-mode">
-                <div class="mode-badge">Product ads</div>
-                <h3>Product Video Concepts</h3>
-                <p>Stronger product framing for paid social, launches, and ads that need a cleaner hook.</p>
-                <div class="mode-preview showcase-preview">
-                  <div class="preview-product"></div>
-                  <div class="preview-copy">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                  </div>
-                </div>
-              </article>
-
-              <article class="mode-card">
-                <div class="mode-badge purple-badge">Social ads</div>
-                <h3>Creative Direction</h3>
-                <p>Shape motion, pacing, hooks, and edit direction before the work gets delivered.</p>
-                <div class="mode-preview cinematic-preview">
-                  <div class="preview-strip"></div>
-                  <div class="preview-strip short"></div>
-                  <div class="timeline">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                  </div>
-                </div>
-              </article>
-            </div>
-
-              <div class="dashboard-grid">
-                <article class="dash-card">
-                  <div class="card-top">
-                    <span>Brand creative</span>
-                    <span class="status-dot"></span>
-                  </div>
-                <div class="swatches">
-                  <span></span>
-                  <span></span>
-                  <span></span>
-                </div>
-              </article>
-
-                <article class="dash-card">
-                  <div class="card-top">
-                    <span>Projects in progress</span>
-                    <span class="muted-tag">Active</span>
-                  </div>
-                <div class="text-lines">
-                  <span></span>
-                  <span></span>
-                  <span class="short-line"></span>
-                </div>
-              </article>
-
-                <article class="dash-card">
-                  <div class="card-top">
-                    <span>Delivery notes</span>
-                    <span class="muted-tag">Ready</span>
-                  </div>
-                <div class="queue-bars">
-                  <span></span>
-                  <span></span>
-                  <span></span>
-                </div>
-              </article>
-            </div>
-          </div>
+        <div class="app-video-shell">
+          <video
+            class="app-showcase-video"
+            autoplay
+            muted
+            loop
+            playsinline
+            preload="metadata"
+            aria-label="Klyvo perfume showcase"
+          >
+            <source src="assets/klyvo-perfume-showcase.mov" type="video/quicktime">
+            <source src="assets/klyvo-perfume-showcase.mov">
+          </video>
         </div>
       </div>
     </div>
   `;
 }
 
-function pageHero({ eyebrow, title, text, ctaLabel, ctaHref }) {
+function pageHero({ eyebrow, title, text, ctaLabel, ctaHref, className = "", headingClassName = "" }) {
   return `
-    <section class="section page-hero">
-      <div class="section-heading compact-heading">
+    <section class="section page-hero ${className}">
+      <div class="section-heading compact-heading ${headingClassName}">
         <span class="section-tag">${eyebrow}</span>
         <h1 class="page-title">${title}</h1>
         <p>${text}</p>
@@ -151,6 +69,8 @@ function pageHero({ eyebrow, title, text, ctaLabel, ctaHref }) {
 
 export function Navbar(page) {
   const pageKey = page === "building" ? "building" : page;
+  const headerCtaLabel = pageKey === "contact" ? "Beta Client Inquiry" : "Start a Project";
+  const headerCtaHref = pageKey === "contact" ? "#contact" : routes.contact;
   return `
     <header class="site-header">
       <a class="brand" href="${routes.home}" aria-label="Klyvo Studios home">
@@ -182,7 +102,7 @@ export function Navbar(page) {
         <a class="${pageKey === "contact" ? "is-active" : ""}" href="${routes.contact}">Contact</a>
       </nav>
 
-      <a class="button button-primary header-cta" href="${routes.contact}">Start a Project</a>
+      <a class="button button-primary header-cta" href="${headerCtaHref}">${headerCtaLabel}</a>
     </header>
   `;
 }
@@ -370,9 +290,9 @@ export function ServicesPage() {
     <main class="main-content">
       ${pageHero({
         eyebrow: "Services",
-        title: "How we're helping brands today",
+        title: "Helping brands create ads that actually get watched.",
         text:
-          "Klyvo Studios helps brands create better ads, clearer concepts, and sharper short-form creative without the overhead of a traditional agency.",
+          "Klyvo Studios creates product videos, ad concepts, and short-form creative for brands that need stronger marketing without hiring a full agency.",
         ctaLabel: "Start a Project",
         ctaHref: routes.contact,
       })}
@@ -396,9 +316,9 @@ export function ServicesPage() {
         <div class="cta-panel">
           <div>
             <span class="section-tag">Need help now?</span>
-            <h2>Need help with a product ad?</h2>
+            <h2>Need stronger creative?</h2>
             <p>
-              Reach out about a project if you need stronger product videos, ads, or creative direction.
+              Whether you have product photos, raw footage, or just an idea, Klyvo Studios can help turn it into content designed to capture attention.
             </p>
           </div>
           <div class="hero-actions">
@@ -448,10 +368,12 @@ export function ContactPage() {
         title: "Choose the right next step.",
         text:
           "Reach out about a product video, social ad, or creative support. Klyvo Studios is working with a limited number of beta clients right now.",
+        className: "contact-page-hero",
+        headingClassName: "contact-page-heading",
       })}
 
       <section id="contact" class="section contact-section">
-        <div class="contact-panel">
+        <div class="contact-panel contact-panel-single">
           <div class="contact-copy">
             <span class="section-tag">Direct email</span>
             <h2>klyvo.cloud@gmail.com</h2>
@@ -467,8 +389,8 @@ export function ContactPage() {
             </p>
           </div>
 
-          <div class="forms-grid">
-            <div class="form-card">
+          <div class="forms-grid forms-grid-single">
+            <div class="form-card form-card-inquiry">
               <h3>Beta client inquiry</h3>
               <form name="contact" method="post" data-form-endpoint="/api/contact">
                 <label>
@@ -523,7 +445,7 @@ export function Footer() {
     <footer class="site-footer">
       <div>
         <strong>Klyvo Studios</strong>
-        <p>Service today. Product in progress.</p>
+        <p>Helping brands today. Building Klyvo tomorrow.</p>
       </div>
       <div class="footer-links">
         <a href="${routes.building}">Behind Klyvo</a>

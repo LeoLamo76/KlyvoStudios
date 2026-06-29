@@ -57,20 +57,20 @@ export const proofItems = [
 
 export const services = [
   {
-    title: "Product ad concepts",
-    body: "Creative concepts built to give products a clearer hook, better framing, and stronger ad direction.",
+    title: "Product Ad Concepts",
+    body: "Creative concepts designed to give products stronger hooks, clearer positioning, and more effective advertising angles.",
   },
   {
-    title: "Short-form video edits",
-    body: "Short-form edits for paid social, product launches, and content that needs to look sharper fast.",
+    title: "Short-Form Video Production",
+    body: "Product videos and social media edits built for TikTok, Instagram Reels, YouTube Shorts, and paid advertising campaigns.",
   },
   {
-    title: "AI-assisted scripts",
-    body: "Hooks, structures, and draft scripts developed faster while keeping the creative judgment human.",
+    title: "AI-Assisted Creative Development",
+    body: "Scripts, hooks, ad structures, and creative ideas developed faster using AI tools while keeping creative decisions human.",
   },
   {
-    title: "Brand creative direction",
-    body: "Creative direction that helps a brand look more consistent, more professional, and easier to trust.",
+    title: "Brand Creative Guidance",
+    body: "Creative direction that helps brands build a more consistent identity, improve trust, and create content that feels professional across platforms.",
   },
 ];
 

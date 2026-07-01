@@ -5,8 +5,9 @@ import {
   ServicesPage,
   AboutPage,
   ContactPage,
+  PrivacyPage,
   Navbar,
-} from "./components.js?v=20260621a";
+} from "./components.js?v=20260701a";
 
 const app = document.querySelector("#app");
 const page = document.body.dataset.page || "home";
@@ -17,6 +18,7 @@ const pageMap = {
   services: ServicesPage,
   about: AboutPage,
   contact: ContactPage,
+  privacy: PrivacyPage,
 };
 
 const renderPage = pageMap[page] || HomePage;

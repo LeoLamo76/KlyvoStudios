@@ -282,6 +282,8 @@ h3 {
 .status-card p,
 .contact-copy p,
 .founder-card p,
+.privacy-panel p,
+.privacy-panel li,
 .site-footer p,
 label,
 input,
@@ -376,7 +378,8 @@ textarea {
 .founder-card,
 .cta-panel,
 .contact-panel,
-.form-card {
+.form-card,
+.privacy-panel {
   position: relative;
   border: 1px solid var(--border);
   border-radius: var(--radius-xl);
@@ -391,7 +394,8 @@ textarea {
 .founder-card::before,
 .cta-panel::before,
 .contact-panel::before,
-.form-card::before {
+.form-card::before,
+.privacy-panel::before {
   content: "";
   position: absolute;
   inset: 0;
@@ -847,6 +851,14 @@ textarea {
   max-width: 780px;
 }
 
+.privacy-page-heading {
+  width: min(820px, 100%);
+}
+
+.privacy-page-hero .page-title {
+  max-width: 11ch;
+}
+
 .page-title {
   max-width: 12ch;
   margin-top: 2px;
@@ -1087,6 +1099,49 @@ textarea:focus {
   color: var(--text-3);
 }
 
+.privacy-section {
+  padding-top: 18px;
+}
+
+.privacy-panel {
+  padding: 34px;
+}
+
+.privacy-meta {
+  display: grid;
+  gap: 4px;
+  margin-bottom: 28px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid rgba(51, 65, 85, 0.72);
+}
+
+.privacy-meta .section-tag {
+  margin-bottom: 0;
+}
+
+.privacy-content {
+  display: grid;
+  gap: 30px;
+  max-width: 900px;
+}
+
+.privacy-block {
+  display: grid;
+  gap: 12px;
+}
+
+.privacy-block h2 {
+  font-size: clamp(1.35rem, 2vw, 1.8rem);
+  line-height: 1.12;
+}
+
+.privacy-block ul {
+  display: grid;
+  gap: 8px;
+  margin: 0;
+  padding-left: 20px;
+}
+
 .site-footer {
   display: flex;
   align-items: flex-start;
@@ -1211,6 +1266,10 @@ textarea:focus {
   .contact-copy h2 {
     max-width: 15ch;
     font-size: clamp(1.65rem, 5vw, 2.3rem);
+  }
+
+  .privacy-panel {
+    padding: 26px;
   }
 
   .app-frame {
@@ -1466,7 +1525,8 @@ textarea:focus {
 
   .contact-panel,
   .founder-card,
-  .roadmap-status-card {
+  .roadmap-status-card,
+  .privacy-panel {
     padding: 20px;
   }
 

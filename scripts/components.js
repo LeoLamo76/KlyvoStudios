@@ -7,7 +7,7 @@ import {
   routes,
   services,
   statusItems,
-} from "./site-data.js?v=20260621a";
+} from "./site-data.js?v=20260701a";
 
 function cardCollection(items, cardClass) {
   return items
@@ -420,6 +420,142 @@ export function ContactPage() {
   `;
 }
 
+const privacySections = [
+  {
+    title: "Who We Are",
+    body: [
+      "Klyvo Studios is a Canadian creative services business that produces product videos, social ads, and brand creative content for small and growing businesses. You can reach us at klyvo.cloud@gmail.com.",
+    ],
+  },
+  {
+    title: "What Information We Collect",
+    body: [
+      "When you submit an inquiry through our contact form, we collect:",
+    ],
+    list: [
+      "Your name",
+      "Your email address",
+      "Your brand or company name",
+      "A description of your project or creative needs",
+    ],
+    after: [
+      "We do not collect payment information directly through this website.",
+    ],
+  },
+  {
+    title: "Why We Collect It",
+    body: [
+      "We collect this information solely to respond to your inquiry, assess whether we can help with your project, and communicate with you about potential or active work together. We do not use it for any other purpose without telling you first.",
+    ],
+  },
+  {
+    title: "How We Use Your Information",
+    body: ["Your information is used to:"],
+    list: [
+      "Respond to your inquiry",
+      "Discuss and scope your project",
+      "Deliver work and communicate during an active project",
+    ],
+    after: [
+      "We do not sell, rent, or share your personal information with third parties for marketing purposes.",
+    ],
+  },
+  {
+    title: "Third-Party Services",
+    body: [
+      "Our contact form is processed by a third-party form service, which may temporarily store submission data on our behalf. We also use email (Gmail) to communicate with clients. These services have their own privacy policies, and by submitting an inquiry you acknowledge that your information passes through them.",
+      "We use AI-assisted tools in our creative workflow. Project materials shared with us may be used as inputs to these tools. We do not submit identifiable personal information about you to AI tools; only creative content relevant to the project.",
+    ],
+  },
+  {
+    title: "How Long We Keep Your Information",
+    body: [
+      "We retain inquiry and project communications for as long as reasonably necessary for the project and any follow-up, typically no longer than two years after a project concludes. You can ask us to delete your information at any time.",
+    ],
+  },
+  {
+    title: "How We Protect Your Information",
+    body: [
+      "We take reasonable steps to protect your information from unauthorized access, including using secure email and reputable third-party services. No method of electronic transmission is completely secure, and we cannot guarantee absolute security.",
+    ],
+  },
+  {
+    title: "Your Rights",
+    body: [
+      "Under Canada's Personal Information Protection and Electronic Documents Act (PIPEDA), you have the right to:",
+    ],
+    list: [
+      "Know what personal information we hold about you",
+      "Request access to that information",
+      "Ask us to correct inaccurate information",
+      "Withdraw your consent to our use of your information and request deletion",
+    ],
+    after: [
+      "To exercise any of these rights, contact us at klyvo.cloud@gmail.com. We will respond within 30 days.",
+    ],
+  },
+  {
+    title: "A Note on Location",
+    body: [
+      "Klyvo Studios is based in Canada and operates under Canadian federal privacy law (PIPEDA). If you are located in Quebec, additional provincial privacy rights may apply under Quebec's Act respecting the protection of personal information in the private sector. If you are located outside Canada, please be aware that your information will be processed in Canada.",
+    ],
+  },
+  {
+    title: "Changes to This Policy",
+    body: [
+      "If we make material changes to this policy, we will update the Last updated date at the top. We encourage you to review this page periodically.",
+    ],
+  },
+  {
+    title: "Contact",
+    body: [
+      "For any privacy questions or requests, contact Klyvo Studios at klyvo.cloud@gmail.com.",
+    ],
+  },
+];
+
+export function PrivacyPage() {
+  return `
+    <main class="main-content">
+      ${pageHero({
+        eyebrow: "Privacy Policy",
+        title: "Privacy Policy",
+        text:
+          "Klyvo Studios collects only the information needed to respond to inquiries, scope creative work, and communicate with clients.",
+        className: "privacy-page-hero",
+        headingClassName: "privacy-page-heading",
+      })}
+
+      <section class="section privacy-section">
+        <article class="privacy-panel">
+          <div class="privacy-meta">
+            <span class="section-tag">Klyvo Studios</span>
+            <p>Last updated: June 2026</p>
+          </div>
+          <div class="privacy-content">
+            ${privacySections
+              .map(
+                ({ title, body = [], list = [], after = [] }) => `
+                  <section class="privacy-block">
+                    <h2>${title}</h2>
+                    ${body.map((paragraph) => `<p>${paragraph}</p>`).join("")}
+                    ${
+                      list.length
+                        ? `<ul>${list.map((item) => `<li>${item}</li>`).join("")}</ul>`
+                        : ""
+                    }
+                    ${after.map((paragraph) => `<p>${paragraph}</p>`).join("")}
+                  </section>
+                `
+              )
+              .join("")}
+          </div>
+        </article>
+      </section>
+    </main>
+  `;
+}
+
 export function BetaCTA() {
   return `
     <section class="section cta-section">
@@ -452,6 +588,7 @@ export function Footer() {
         <a href="${routes.services}">Services</a>
         <a href="${routes.about}">About</a>
         <a href="${routes.contact}">Contact</a>
+        <a href="${routes.privacy}">Privacy</a>
       </div>
     </footer>
   `;

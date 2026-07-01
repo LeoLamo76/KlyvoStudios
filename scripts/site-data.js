@@ -4,6 +4,7 @@ export const routes = {
   services: "/services.html",
   about: "/about.html",
   contact: "/contact.html",
+  privacy: "/privacy.html",
   beta: "/contact.html#beta",
 };
 

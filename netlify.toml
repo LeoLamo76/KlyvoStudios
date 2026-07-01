@@ -8,6 +8,11 @@
     Cache-Control = "public, max-age=0, must-revalidate"
 
 [[headers]]
+  for = "/favicon*"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
+
+[[headers]]
   for = "/site.webmanifest"
   [headers.values]
     Cache-Control = "public, max-age=0, must-revalidate"

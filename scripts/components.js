@@ -100,6 +100,7 @@ export function Navbar(page) {
         <a class="${pageKey === "services" ? "is-active" : ""}" href="${routes.services}">Services</a>
         <a class="${pageKey === "about" ? "is-active" : ""}" href="${routes.about}">About</a>
         <a class="${pageKey === "contact" ? "is-active" : ""}" href="${routes.contact}">Contact</a>
+        <a class="${pageKey === "privacy" ? "is-active" : ""}" href="${routes.privacy}">Privacy</a>
       </nav>
 
       <a class="button button-primary header-cta" href="${headerCtaHref}">${headerCtaLabel}</a>

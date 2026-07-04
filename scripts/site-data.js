@@ -1,11 +1,11 @@
 export const routes = {
   home: "/",
-  building: "/building.html",
-  services: "/services.html",
-  about: "/about.html",
-  contact: "/contact.html",
-  privacy: "/privacy.html",
-  beta: "/contact.html#beta",
+  building: "/building",
+  services: "/services",
+  about: "/about",
+  contact: "/contact",
+  privacy: "/privacy",
+  beta: "/contact#beta",
 };
 
 export const statusItems = [

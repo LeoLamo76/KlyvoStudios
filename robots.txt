@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://klyvostudios.com/sitemap.xml

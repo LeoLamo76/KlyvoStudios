@@ -43,10 +43,9 @@ function appMockup({ compact = false } = {}) {
             loop
             playsinline
             preload="metadata"
-            aria-label="Klyvo perfume showcase"
+            aria-label="Klyvo product-video showcase"
           >
-            <source src="assets/klyvo-perfume-showcase.mov" type="video/quicktime">
-            <source src="assets/klyvo-perfume-showcase.mov">
+            <source src="assets/klyvo-demo-showcase.mp4" type="video/mp4">
           </video>
         </div>
       </div>

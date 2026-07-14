@@ -7,7 +7,7 @@ import {
   ContactPage,
   PrivacyPage,
   Navbar,
-} from "./components.js?v=20260704a";
+} from "./components.js?v=20260714b";
 
 const app = document.querySelector("#app");
 const page = document.body.dataset.page || "home";
